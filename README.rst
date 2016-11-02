@@ -63,7 +63,8 @@ Results
 	| GroupVideo MP4 (slow) |       6676 |
 	+-----------------------+------------+
 
-Storing a large set of images in a video file can save a lot of space!
+Storing a large set of images in a video file can save a lot of space! 
+Compression rates are >30x better than simple HDF5 gzip+shuffle compression.
 
 
 
