@@ -13,13 +13,23 @@ Compression methods
 * hdf5gzshuffle: gzip+shuffle
 * group: loads the hdf5gzshuffle output, groups the images into similar piles using imagehashes, then creates hdf5 data sets for each pile.
 * video: stores the frames in a video
+
   * mp4 (lossy)
   * x264-fast (loss-less)
   * x264-slow (loss-less, smaller size)
   * x264-interm (loss-less)
+
 * groupvideo: groups the images using image hashes, then concatenates the similar images into a video. The video algorithm can take advantage of adjoint similar frames. Same subcommands as video.
+
+  * mp4 (lossy)
+  * x264-fast (loss-less)
+  * x264-slow (loss-less, smaller size)
+  * x264-interm (loss-less)
+
 * pcaself: PCA of the images, stores the 20 most important eigenvectors and eigenvalues.
 
+
+Image hashing uses https://github.com/JohannesBuchner/imagehash.
 
 Examples
 -----------------
@@ -45,9 +55,9 @@ Examples
 Results
 ---------------
 
-2000 images with 300x200 pixels are generated. Grayscale.
+By default, 2000 grayscale images with 300x200 pixels are generated.
 
-.. table:: Results
+.. table:: Storage file results:
 
 	+-----------------------+------------+
 	| Method                |  Size (KB) |
